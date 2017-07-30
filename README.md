@@ -18,12 +18,18 @@ THIS IS THIS WORK IN PROGRESS
 
 It takes care of the initial work of generating a project skeleton with
 
-- A complete `setup.py` compiling the extension module
+- A complete `setup.py` compiling the extension module. 
+  The `setup.py` script is calling CMake, CMake is the
+  actual build system.
 - Automatic download of cpp dependencies:
     - xtensor
     - doctest
     - pybind11
     - xtensor-python
+
+- Dependencies users needs to handle by himself:
+    - cmake
+    - numpy
 
 ## Usage
 
