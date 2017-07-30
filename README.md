@@ -7,6 +7,9 @@
 [![Appveyor](https://ci.appveyor.com/api/projects/status/qwjg22qb8as1bndp?svg=true)](https://ci.appveyor.com/project/DerThorsten/xtensor-python-cookiecutter-v2)
 
 
+[![Build status](https://ci.appveyor.com/api/projects/status/hqaaw6wpwr86yv5v/branch/master?svg=true)](https://ci.appveyor.com/project/DerThorsten/xtensor-python-cookiecutter-v2/branch/master)
+
+
 
 #### A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating a C++ packages with custom Python extension with xtensor
 
