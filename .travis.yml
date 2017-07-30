@@ -94,7 +94,8 @@ install:
     - conda clean --packages
     - conda update -q conda
     - conda info -a
-
+    
+    - conda install numpy
 
     ## Install xtensor-python
     #- conda install xtensor-python -c conda-forge
