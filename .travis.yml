@@ -56,6 +56,28 @@ matrix:
       osx_image: xcode8
       compiler: clang
       env: PY=3
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.9
+          packages:
+            - clang-3.9
+      env: COMPILER=clang CLANG=3.9 PY=3
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-4.0
+          packages:
+            - clang-4.0
+      env: COMPILER=clang CLANG=4.0 PY=3
+    - os: osx
+      osx_image: xcode8
+      compiler: clang
+      env: PY=3
 env:
   global:
     - MINCONDA_VERSION="latest"
