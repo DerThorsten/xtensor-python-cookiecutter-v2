@@ -8,13 +8,13 @@
 
 
 
-#### A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating a c++ packages with custom Python extension with xtensor
+#### A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating a C++ packages with custom Python extension with xtensor
 
 ## What is xtensor-python-cookiecutter-v2?
 
 THIS IS THIS WORK IN PROGRESS
 
-`xtensor-python-cookiecutter` helps extension authors create a c++ package and  Python extension modules making use of xtensor.
+`xtensor-python-cookiecutter-v2` helps extension authors create a C++ package and  Python extension modules making use of xtensor.
 
 It takes care of the initial work of generating a project skeleton with
 
