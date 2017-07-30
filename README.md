@@ -2,6 +2,15 @@
 
 
 
+
+[![Travis](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter.svg?branch=master)](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter)
+
+
+[![Appveyor](https://ci.appveyor.com/api/projects/status/qwjg22qb8as1bndp?svg=true)]
+(https://ci.appveyor.com/project/DerThorsten/xtensor-python-cookiecutter-v2)
+
+
+
 #### A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating a c++ packages with custom Python extension with xtensor
 
 ## What is xtensor-python-cookiecutter-v2?
