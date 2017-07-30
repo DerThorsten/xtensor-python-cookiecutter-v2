@@ -1,6 +1,6 @@
 
 #-------------------------------------------------------------------------------------------------------------------
-# Setup unit testing
+# Setup python bindings
 #-------------------------------------------------------------------------------------------------------------------
 
 #------------------------------------
@@ -26,11 +26,12 @@ set(PYBIND11_INCLUDE_DIR ${source_dir}/include CACHE INTERNAL "Path to include f
 MESSAGE(STATUS PYBIND11_INCLUDE_DIR ${PYBIND11_INCLUDE_DIR})
 include_directories(${PYBIND11_INCLUDE_DIR})
 
-
-
-
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/tools")
 include(pybind11Tools)
+
+# numpy
+find_package(NumPy REQUIRED)
+include_directories(${NUMPY_INCLUDE_DIRS})
 
 #------------------------------------
 # download xtensor-python
