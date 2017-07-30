@@ -42,6 +42,14 @@ add_executable(test_{{ cookiecutter.package_name }}
     test_{{ cookiecutter.package_name }}.cxx
     test_{{ cookiecutter.package_name }}_a.cxx
 )
+
+
+if(NOT MSVC)
+    # Make sure C++11/14 are enabled
+    target_compile_options(test_{{ cookiecutter.package_name }}  PUBLIC  -std=c++14)
+endif()
+
+
 add_test(NAME test_{{ cookiecutter.package_name }} COMMAND test_{{ cookiecutter.package_name }})
 #target_link_libraries(test_xtensor_sandbox)
 add_dependencies(test_{{ cookiecutter.package_name }}
