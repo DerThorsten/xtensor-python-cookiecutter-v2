@@ -3,7 +3,7 @@
 
 
 
-[![Travis](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter.svg?branch=master)](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter)
+[![Travis](https://travis-ci.org/DerThorsten/xtensor-python-cookiecutter-v2.svg?branch=master)](https://travis-ci.org/DerThorsten/xtensor-python-cookiecutter-v2)
 
 
 [![Appveyor](https://ci.appveyor.com/api/projects/status/qwjg22qb8as1bndp?svg=true)]
