@@ -2,12 +2,9 @@
 
 
 
-
-[![Travis](https://travis-ci.org/DerThorsten/xtensor-python-cookiecutter-v2.svg?branch=master)](https://travis-ci.org/DerThorsten/xtensor-python-cookiecutter-v2)
-[![Appveyor](https://ci.appveyor.com/api/projects/status/qwjg22qb8as1bndp?svg=true)](https://ci.appveyor.com/project/DerThorsten/xtensor-python-cookiecutter-v2)
-
-
+[![Build Status](https://travis-ci.org/DerThorsten/xtensor-python-cookiecutter-v2.svg?branch=master)](https://travis-ci.org/DerThorsten/xtensor-python-cookiecutter-v2)
 [![Build status](https://ci.appveyor.com/api/projects/status/hqaaw6wpwr86yv5v/branch/master?svg=true)](https://ci.appveyor.com/project/DerThorsten/xtensor-python-cookiecutter-v2/branch/master)
+
 
 
 
