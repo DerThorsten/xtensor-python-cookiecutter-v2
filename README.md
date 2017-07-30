@@ -27,7 +27,7 @@ It takes care of the initial work of generating a project skeleton with
     - pybind11
     - xtensor-python
 
-- Dependencies users needs to handle by himself:
+- Dependencies users needs to handle manually:
     - cmake
     - numpy
 
