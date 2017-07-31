@@ -9,44 +9,53 @@
 
 #include <iostream>
 #include <numeric>
-#include <cmath>
+
+
+// our headers
+#include "{{ cookiecutter.cpp_root_folder_name }}/{{ cookiecutter.package_name }}.hpp"
 
 namespace py = pybind11;
 
-// Examples
 
-inline double example1(xt::pyarray<double> &m)
-{
-    return m(0);
+
+namespace {{ cookiecutter.cpp_namespace }} {
+
+    void def_examples(py::module & module){
+
+        // lambda to have pyarray as input
+        module.def("example1", 
+            [](xt::pyarray<double> &m){
+                return example1(m);
+            }, 
+            "Return the first element of an array, of dimension at least one"
+        );
+
+        //lambda to have pyarray as in an output(!)
+        module.def("example2", [](xt::pyarray<double> &m) -> xt::pyarray<double> {
+            return example2(m);
+        },  
+        "Return the the specified array plus 2");
+
+        // lambda to have pyarray as input
+        module.def("readme_example1", [](xt::pyarray<double> &m) {
+            return readme_example1(m);
+        }, 
+        "Accumulate the sines of all the values of the specified array");
+
+
+        module.def("vectorize_example1", xt::pyvectorize(scalar_func), 
+            "Add the sine and and cosine of the two specified values");
+    }
+
 }
 
-inline xt::pyarray<double> example2(xt::pyarray<double> &m)
-{
-    return m + 2;
-}
-
-// Readme Examples
-
-inline double readme_example1(xt::pyarray<double> &m)
-{
-    auto sines = xt::sin(m);
-    return std::accumulate(sines.begin(), sines.end(), 0.0);
-}
-
-// Vectorize Examples
-
-inline double scalar_func(double i, double j)
-{
-    return std::sin(i) + std::cos(j);
-}
 
 // Python Module and Docstrings
-
 PYBIND11_PLUGIN({{ cookiecutter.python_package_name }})
 {
     xt::import_numpy();
 
-    py::module m("{{ cookiecutter.python_package_name }}", R"docu(
+    py::module module("{{ cookiecutter.python_package_name }}", R"docu(
         {{ cookiecutter.project_short_description }}
 
         .. currentmodule:: {{ cookiecutter.python_package_name }}
@@ -60,12 +69,7 @@ PYBIND11_PLUGIN({{ cookiecutter.python_package_name }})
            vectorize_example1
     )docu");
 
-    m.def("example1", example1, "Return the first element of an array, of dimension at least one");
-    m.def("example2", example2, "Return the the specified array plus 2");
+    {{ cookiecutter.cpp_namespace }}::def_examples(module);
 
-    m.def("readme_example1", readme_example1, "Accumulate the sines of all the values of the specified array");
-
-    m.def("vectorize_example1", xt::pyvectorize(scalar_func), "Add the sine and and cosine of the two specified values");
-
-    return m.ptr();
+    return module.ptr();
 }

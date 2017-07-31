@@ -6,6 +6,7 @@ import sys
 import sysconfig
 import platform
 import subprocess
+import multiprocessing
 
 from distutils.version import LooseVersion
 from setuptools import setup, Extension
@@ -57,7 +58,10 @@ class CMakeBuild(build_ext):
             build_args += ['--', '/m']
         else:
             cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
-            build_args += ['--', '-j2']
+
+            n_cpu = multiprocessing.cpu_count()
+
+            build_args += ['--', '-j%d'%n_cpu]
 
         env = os.environ.copy()
         env['CXXFLAGS'] = '{} -DVERSION_INFO=\\"{}\\"'.format(
